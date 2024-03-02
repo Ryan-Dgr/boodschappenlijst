@@ -16,7 +16,6 @@ namespace boodschappenlijst
         {
             if (!IsPostBack)
             {
-
             lbOutput.DataSource = controller.getBoodschappen();
             lbOutput.DataBind();
             }
@@ -63,8 +62,6 @@ namespace boodschappenlijst
                     }
                         getal += c;
                 }
-
-
 
                 Label1.Text = getal;
 

@@ -10,6 +10,10 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
+            <%-- toont de validators niet meer, omdat hij meteen refresht na drukken op de knop --%>
+
+
                <h1>boodschappenlijst</h1>
             <p>product: </p>
             <asp:RequiredFieldValidator ID="RequiredFieldValidatorProduct" runat="server" 
