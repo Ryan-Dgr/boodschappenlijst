@@ -14,6 +14,13 @@ namespace domain_boodschappen.Persistence
             mapper mapper = new mapper();
             mapper.addBoodschap(boodschap);
         }
+
+        public void deleteBoodschap(boodschap boodschap)
+        {
+            mapper mapper = new mapper();
+            mapper.deleteBoodschap(boodschap);
+        }
+
         public List<boodschap> getBooschappen()
         {
             mapper mapper = new mapper();

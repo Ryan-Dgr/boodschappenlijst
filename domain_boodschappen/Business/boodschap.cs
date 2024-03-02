@@ -35,6 +35,12 @@ namespace domain_boodschappen.Business
             Extra = extra;
 
         }
+
+        //data verwijderen
+        public boodschap(int id)
+        {
+            Id=id;
+        }
         //data toevoegen
         public boodschap( string product, int aantal, string extra)
         {
