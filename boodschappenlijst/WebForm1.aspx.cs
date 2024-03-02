@@ -21,15 +21,19 @@ namespace boodschappenlijst
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
-            string product;
-            int aantal;
-            string extra;
+            if (Page.IsValid)
+            {
+                string product;
+                int aantal;
+                string extra;
 
-            product = TbProduct.Text;
-            aantal = Convert.ToInt32(TbAantal.Text);
-            extra = TbExtra.Text;
+                product = TbProduct.Text;
+                aantal = Convert.ToInt32(TbAantal.Text);
+                extra = TbExtra.Text;
 
-            controller.addBoodschap(product, aantal, extra);
+                controller.addBoodschap(product, aantal, extra);
+
+            }
 
         }
 
