@@ -12,12 +12,37 @@
         <div>
                <h1>boodschappenlijst</h1>
             <p>product: </p>
-            <asp:TextBox ID="TbProduct" runat="server"></asp:TextBox><br /><br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidatorProduct" runat="server" 
+            ControlToValidate="TbProduct" ErrorMessage="Product is verplicht" />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidatorProduct" runat="server"
+            ControlToValidate="TbProduct"
+            ErrorMessage="Product mag maximaal 100 tekens bevatten"
+            ValidationExpression="^[\s\S]{0,100}$" />
+            <br />
+            <asp:TextBox ID="TbProduct" runat="server"></asp:TextBox>
+            <br /><br />
+
             <p>aantal: </p>
-            <asp:TextBox ID="TbAantal" runat="server"></asp:TextBox><br /><br />
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+            ControlToValidate="TbAantal" ErrorMessage="Aantal is verplicht" />
+            <asp:RangeValidator ID="RangeValidatorAantal" runat="server"
+            ControlToValidate="TbAantal" ErrorMessage="Aantal moet tussen 1 en 250 liggen" 
+            MinimumValue="1" MaximumValue="250" Type="Integer" /> 
+            <br />
+            <asp:TextBox ID="TbAantal" runat="server"></asp:TextBox>
+            <br /><br />
+
             <p>extra: </p>
-            <asp:TextBox ID="TbExtra" runat="server"></asp:TextBox><br /><br />
+            <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server"
+            ControlToValidate="TbExtra"
+            ErrorMessage="Het veld 'Extra' mag maximaal 250 tekens bevatten"
+            ValidationExpression="^[\s\S]{0,100}$" />
+            <br />
+            <asp:TextBox ID="TbExtra" runat="server"></asp:TextBox>
+
+            <br /><br />
             <asp:Button ID="btnAdd" runat="server" Text="Toevoegen" OnClick="btnAdd_Click" /><br /><br />
+            
             <asp:ListBox ID="lbOutput" Rows="10"  runat="server"></asp:ListBox>
         </div>
     </form>
