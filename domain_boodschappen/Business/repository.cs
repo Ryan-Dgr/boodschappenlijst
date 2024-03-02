@@ -16,6 +16,10 @@ namespace domain_boodschappen.Business
             get { return Boodschappen; }
             set { Boodschappen = value; }
         }
+        public void deleteBoodschap(boodschap boodschap)
+        {
+            boodschappen.Remove(boodschap);
+        }
 
         public void addBoodschap(boodschap boodschap)
         {

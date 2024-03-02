@@ -22,6 +22,12 @@ namespace domain_boodschappen.Business
             _persistencecode.addBoodschap(boodschap);
 
         }
+        public void deleteBoodschap(int id)
+        {
+            boodschap boodschap = new boodschap(id);
+            _boodschappenlijst.deleteBoodschap(boodschap);
+            _persistencecode.deleteBoodschap(boodschap);
+        }
 
         public List<string> getBoodschappen()
         {

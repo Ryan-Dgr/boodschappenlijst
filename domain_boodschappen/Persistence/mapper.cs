@@ -27,6 +27,18 @@ namespace domain_boodschappen.Persistence
             conn.Close();
         }
 
+        public void deleteBoodschap(boodschap boodschap)
+        {
+            string mysql;
+            MySqlConnection conn = new MySqlConnection( _connectionstring);
+            mysql = "DELETE FROM boodschappen.tblboodschappen WHERE (idBoodschappen = @idBoodschappen);";
+            MySqlCommand cmd = new MySqlCommand( mysql, conn);
+            cmd.Parameters.AddWithValue("@idBoodschappen", boodschap.Id);
+            conn.Open() ;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
         public List<boodschap> GetBoodschappen()
         {
             List<boodschap> lijst = new List<boodschap>();

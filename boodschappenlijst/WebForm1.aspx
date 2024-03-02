@@ -41,9 +41,12 @@
             <asp:TextBox ID="TbExtra" runat="server"></asp:TextBox>
 
             <br /><br />
-            <asp:Button ID="btnAdd" runat="server" Text="Toevoegen" OnClick="btnAdd_Click" /><br /><br />
-            
-            <asp:ListBox ID="lbOutput" Rows="10"  runat="server"></asp:ListBox>
+            <asp:Button ID="btnAdd" runat="server" Text="Toevoegen" OnClick="btnAdd_Click" />
+            <asp:Button ID="btnDelete" runat="server" Text="Delete" OnClick="btnDelete_Click" /><br /><br />
+
+            <asp:ListBox ID="lbOutput" runat="server" Rows="10" EnableViewState="true"></asp:ListBox>
+
+            <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
         </div>
     </form>
 </body>

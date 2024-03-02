@@ -20,6 +20,11 @@ namespace domain_boodschappen.Business
         {
             _boodschap.Add(boodschap);
         }
+
+        public void deleteBoodschap(boodschap boodschap)
+        {
+            _boodschap.Remove(boodschap);
+        }
         // constructor
         public boodschappenlijst()
         {
