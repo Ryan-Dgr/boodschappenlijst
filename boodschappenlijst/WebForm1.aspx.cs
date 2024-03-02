@@ -23,8 +23,6 @@ namespace boodschappenlijst
         {
             if (Page.IsValid)
             {
-
-
                 string product;
                 int aantal;
                 string extra;
