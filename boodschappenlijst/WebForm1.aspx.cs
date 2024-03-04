@@ -26,8 +26,9 @@ namespace boodschappenlijst
         {
             
 
-            if (Page.IsValid)
+            if(Page.IsValid)
             {
+
                 string product;
                 int aantal;
                 string extra;
@@ -38,14 +39,18 @@ namespace boodschappenlijst
 
                 controller.addBoodschap(product, aantal, extra);
 
+            
+                Response.Redirect(Request.RawUrl);
+                     
             }
-            Response.Redirect(Request.RawUrl);
+            
+            
 
         }
 
         protected void btnDelete_Click(object sender, EventArgs e)
         {
-
+            
             if (lbOutput.SelectedIndex != -1)
             {
 
@@ -63,14 +68,13 @@ namespace boodschappenlijst
                         getal += c;
                 }
 
-                Label1.Text = getal;
-
                 if (int.TryParse(getal, out id))
                 {
                     controller.deleteBoodschap(id);
                 }
 
                 Response.Redirect(Request.RawUrl);
+            
             }
 
         }
